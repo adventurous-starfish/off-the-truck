@@ -56,13 +56,21 @@ You can see some define the view controller here, everywhere else it's defined i
     templateUrl: 'view/login.html',
     controller: 'UserController'
   })
+    // this is the parent vendor view
   .state('vendor', {
     url: '/vendor',
+    templateUrl: 'view/vendor-tabs.html',
+    controller: 'VendorCtrl'
+  })
+  // this home view is a child of vendor
+  .state('vendor.home', {
+    url: '/home',
     templateUrl: 'view/vendor-main.html',
     controller: 'VendorCtrl'
   })
-  .state('vendor-settings', {
-    url: '/vendor-settings',
+  // this settings view is a child of vendor
+  .state('vendor.settings', {
+    url: '/settings',
     templateUrl: 'view/vendor-settings.html',
     controller:  'VendorCtrl'
   });
