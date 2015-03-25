@@ -58,7 +58,12 @@ You can see some define the view controller here, everywhere else it's defined i
   .state('vendor', {
     url: '/vendor',
     templateUrl: 'view/vendor-main.html',
-    controller: 'UserController'
+    controller: 'VendorCtrl'
+  })
+  .state('vendor-settings', {
+    url: '/vendor-settings',
+    templateUrl: 'view/vendor-settings.html',
+    controller:  'VendorCtrl'
   });
   /*This is defining the standard view. If there is an error or if the view is not otherwise
   specified, the app will point the visitor to main.*/
