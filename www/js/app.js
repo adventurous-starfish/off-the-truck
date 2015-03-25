@@ -71,7 +71,7 @@ You can see some define the view controller here, everywhere else it's defined i
 })
 
 // This controller manages adding a new user to our firebase, which is located at the url below.
-.controller('TruckController', ['$scope', "$firebaseObject", 
+.controller('TruckController', ['$scope', '$firebaseObject',  
   function($scope, $firebaseObject) {
      /*Scope.user allows us to take information from the models on the html file and have access
      to them here in our JS file*/
@@ -84,10 +84,20 @@ You can see some define the view controller here, everywhere else it's defined i
      var obj = $firebaseObject(ref);
 
      $scope.trucks = obj;
+
+
+     // Recenter the Google Map on the truck's position when a user clicks on the truck's name in the list of trucks in the User main view
+     $scope.centerMap = function(truck) {
+       // Call the recenterMap method from the mapCtrl controller
+       console.log('Inside the centerMap method');
+       console.log('lat: ' + truck.lat + ' lng: ' + truck.long);
+       //Map.recenterMap(truck.lat, truck.long);
+     };
+
    }])
 
 /*This controller manages the longitute and latitude properties of our truck objects in firebase*/
-.controller('TruckLocation', ['$scope', "$firebaseObject", 'User', 'Truck', '$state',
+.controller('TruckLocation', ['$scope', '$firebaseObject', 'User', 'Truck', '$state',
   function($scope, $firebaseObject, User, Truck, $state) {
     //This 'new firebase' syntax is how you allow a controller to interact with a firebase database
     var ref = new Firebase("https://offthetruck.firebaseio.com/Trucks");

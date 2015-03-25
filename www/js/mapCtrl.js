@@ -111,6 +111,12 @@ angular.module('offTheTruck.mapCtrl', [])
       });
       infoWindow.open(map, marker);
     });
-  }
+  };
+
+  // Recenter the map for the provided latitude and longitude
+  $scope.recenterMap = function(latitude, longitude){
+    console.log('lat: ' + latitude + ' lng: ' + longitude);
+    map.setCenter({lat: latitude, lng: longitude});
+  };
 
 }]);
