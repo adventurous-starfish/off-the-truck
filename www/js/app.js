@@ -4,6 +4,7 @@ angular.module('offTheTruck', [
   'ionic',
   'firebase',
   'offTheTruck.factories',
+  'offTheTruck.mapFactory',
   'offTheTruck.mapCtrl',
   'offTheTruck.userCtrl'
   ])
@@ -71,8 +72,8 @@ You can see some define the view controller here, everywhere else it's defined i
 })
 
 // This controller manages adding a new user to our firebase, which is located at the url below.
-.controller('TruckController', ['$scope', '$firebaseObject',  
-  function($scope, $firebaseObject) {
+.controller('TruckController', ['$scope', '$firebaseObject', 'Map',  
+  function($scope, $firebaseObject, Map) {
      /*Scope.user allows us to take information from the models on the html file and have access
      to them here in our JS file*/
 
@@ -91,7 +92,7 @@ You can see some define the view controller here, everywhere else it's defined i
        // Call the recenterMap method from the mapCtrl controller
        console.log('Inside the centerMap method');
        console.log('lat: ' + truck.lat + ' lng: ' + truck.long);
-       //Map.recenterMap(truck.lat, truck.long);
+       Map.recenterMap(truck.lat, truck.long);
      };
 
    }])

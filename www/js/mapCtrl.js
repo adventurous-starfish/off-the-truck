@@ -2,12 +2,11 @@
 
 angular.module('offTheTruck.mapCtrl', [])
 
-.controller('mapCtrl', ['$scope', '$firebaseObject', function($scope, $firebaseObject){
+.controller('mapCtrl', ['$scope', '$firebaseObject', 'Map', function($scope, $firebaseObject, Map){
   //We are storing the lat / long data in firebase, so we need reference to our firebase:
   var ref = new Firebase("https://offthetruck.firebaseio.com/Trucks");
-  //Initialize the lat/long just in case
-  var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
-  var infoWindow;
+  
+  
 
   /*This storage object keeps track of the trucks that should be on the map. This is an object
   that sits client side and is updated whenever Firebase is updated.*/
@@ -15,14 +14,8 @@ angular.module('offTheTruck.mapCtrl', [])
   //The cute trucks we drop on the map instead of the standard Google marker
   var markerImg = './img/truckMarker40x27.png';
    
-  var mapOptions = {
-      center: myLatlng,
-      zoom: 13,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-
   //This is how you create a new Google map
-  var map = new google.maps.Map(document.getElementById("map-container"), mapOptions);
+  var map = Map.getMap();
 
   /*Google navigator code to get position
   In the callback, 'pos' is the result of Google's 'getCurrentPosition method*/
@@ -54,7 +47,7 @@ angular.module('offTheTruck.mapCtrl', [])
 
         /*Adds the Truck name to the pin, so when a user clicks it, they can see the truck name on the map
         Function is defined below.*/
-        truckInfo(truckMarker, data[key].truckname);
+        $scope.truckInfo(truckMarker, data[key].truckname);
 
         //Save the marker to the local storage on each client instance
         markerStorage[data[key].truckname] = truckMarker;
@@ -101,22 +94,7 @@ angular.module('offTheTruck.mapCtrl', [])
   $scope.map = map;
 
   //These little windows pop up when a user clicks on the map icon on the map
-  function truckInfo(marker, message){
-    google.maps.event.addListener(marker, 'click', function(){
-      if(infoWindow){
-        infoWindow.close();
-      }
-      infoWindow = new google.maps.InfoWindow({
-        content:message
-      });
-      infoWindow.open(map, marker);
-    });
+  $scope.truckInfo = function(marker, message){
+    Map.populateTruckInfo(marker, message);
   };
-
-  // Recenter the map for the provided latitude and longitude
-  $scope.recenterMap = function(latitude, longitude){
-    console.log('lat: ' + latitude + ' lng: ' + longitude);
-    map.setCenter({lat: latitude, lng: longitude});
-  };
-
 }]);
