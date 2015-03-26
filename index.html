@@ -1,36 +1,78 @@
-
-
 <!DOCTYPE html>
 <head>
-  <link href='http://fonts.googleapis.com/css?family=Lato:900,300italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
+
 <body>
-  <div class="background"></div>
-  <div class="content">
-    <div class="marker-container"><img src="marker.png" alt="marker"></div>
-    <div class="img-container"><img class="logo" src="logo.png" alt="logo"></div>
-    <h1 class="app-name"><a class="app-name" href="https://off-the-truck.azurewebsites.net/">Off the Truck</a></h1>
-    <iframe src="https://ghbtns.com/github-btn.html?user=Adventurous-Starfish&repo=Off-The-Truck&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
-    <h2 class="profile-header">The Development Team:</h2>
-    <div class="profile-container">
-      <div class="profile">
-        <h3><a href="https://github.com/millionhari">Michael Hari</a></h3>
-        <span>Product Owner</span> 
+  <div class="jumbotron map-background">
+  </div>
+  <div class="row truck-logo">
+    <a href="https://offthetruck.herokuapp.com/#/main"><img src="offthetrucklogo300x300transparent.png" alt="logo"></a>
+  </div>
+  <div class="row spacer">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="lead">
+        <h2>Connecting food trucks and diners</h2>
+        <a href="http://glintapp.azurewebsites.net/" class="btn btn-outline-inverse btn-lg visit-button">Eat Now</a>
+        <a href="docs/glint.html" target="_blank" class="btn btn-outline-inverse btn-lg visit-button">View Docs</a>
       </div>
-      <div class="profile">
-        <h3><a href="https://github.com/annekef/">Anneke Floor</a></h3>
-        <span>Scrum Mistress</span> 
-      </div>
-      <div class="profile">
-        <h3><a href="https://github.com/Rudimental/">David Rabkin</a></h3>
-        <span>Project Manager</span> 
-      </div>
-      <div class="profile">
-        <h3><a href="https://github.com/kalevrk/">Kalev Roomann-Kurrik</a></h3>
-        <span>Development Team</span> 
+      <div class="github-buttons">
+        <iframe src="https://ghbtns.com/github-btn.html?user=adventurous-starfish&repo=offthetruck&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
       </div>
     </div>
+    <div class="col-md-2"></div>
   </div>
+  <!-- Team -->
+    <div class="row team-row">
+      <div class="glint-team">
+        <h1>Adventurous Starfish</h1>
+        <br>
+        <div class="col-md-3">
+          <img class="img-circle team-members" src="team-kalev.jpg" alt="">
+          <h3 class="glint-name">Kalev Roomann-Kurrik</h3>
+          <h4>Project Manager</h4>
+          <p>"No dog can eat me."</p>
+          <a href="https://twitter.com/kalevrk" target="_blank"><i class="fa fa-twitter-square fa-2x social-icons"></i></a>
+          <a href="https://github.com/KalevRK" target="_blank"><i class="fa fa-github-square fa-2x social-icons"></i></a>
+          <a href="https://www.linkedin.com/in/kalevrk" target="_blank"><i class="fa fa-linkedin-square fa-2x social-icons"></i></a>
+        </div>
+        <div class="col-md-3">
+          <img class="img-circle team-members" src="team-anneke.jpg" alt="">
+          <h3 class="glint-name">Anneke Floor</h3>
+          <h4>Scrum master</h4>
+          <p>"Ain't no party like a Liz Lemon party!"</p>
+          <a href="https://twitter.com/Anneke_Floor" target="_blank"><i class="fa fa-twitter-square fa-2x social-icons"></i></a>
+          <a href="https://github.com/annekef" target="_blank"><i class="fa fa-github-square fa-2x social-icons"></i></a>
+          <a href="https://www.linkedin.com/pub/anneke-floor/aa/432/ba3" target="_blank"><i class="fa fa-linkedin-square fa-2x social-icons"></i></a>
+        </div>
+        <div class="col-md-3">
+          <img class="img-circle team-members" src="team-david.jpg" alt="">
+          <h3 class="glint-name">David Rabkin</h3>
+          <h4>Product Owner</h4>
+          <p>"Everything is awesome."</p>
+          <a href="https://twitter.com/d_rab" target="_blank"><i class="fa fa-twitter-square fa-2x social-icons"></i></a>
+          <a href="https://github.com/Rudimental" target="_blank"><i class="fa fa-github-square fa-2x social-icons"></i></a>
+          <a href="https://www.linkedin.com/pub/david-rabkin/aa/b64/136" target="_blank"><i class="fa fa-linkedin-square fa-2x social-icons"></i></a>
+        </div>
+        <div class="col-md-3">
+          <img class="img-circle team-members" src="team-mike.jpg" alt="">
+          <h3 class="glint-name">Michael Hari</h3>
+          <h4>Development Team</h4>
+          <p>"Yum I like food."</p>
+          <a href="http://twitter.com/millionhari" target="_blank"><i class="fa fa-twitter-square fa-2x social-icons"></i></a>
+          <a href="https://github.com/millionhari" target="_blank"><i class="fa fa-github-square fa-2x social-icons"></i></a>
+          <a href="http://www.linkedin.com/in/millionhari/" target="_blank"><i class="fa fa-linkedin-square fa-2x social-icons"></i></a>
+        </div>    
+      </div>
+    </div>
+  <nav class="navbar navbar-default navbar-bottom" role="navigation">
+    <div class="row footer-bottom">
+      <div class="github-footer-link"><a href="https://github.com/adventurous-starfish/glint" target="_blank"><i class="fa fa-github fa-4x"></i></a></div>
+    </div>
+  </nav>
 </body>
