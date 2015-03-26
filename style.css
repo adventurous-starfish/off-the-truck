@@ -1,0 +1,99 @@
+body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+h3:hover{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.background {
+  background-image: url('background.png');
+  opacity: 0.3;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  min-width: 10px;
+  height: 60vh;
+  left: 0;
+  background-size: cover;
+  background-position: right;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content {
+  background-color: #FF866D;
+  height: 40vh;
+  bottom: 0;
+  width: 100%;
+}
+
+.app-name {
+  position: relative;
+  margin: 0 auto;
+  top: -15%;
+  text-align: center;
+  font-size: 85px;
+  color: #FF3E15;
+  -webkit-text-stroke: 1px white;
+  text-shadow:5px 5px 4px rgba(0,0,0, 0.298039);
+}
+
+.img-container {
+  position: absolute;
+  margin: 0 auto;
+  height: 250px;
+  width: 250px;
+  left: 0;
+  right: 0;
+  top: 40%;
+}
+
+.marker-container {
+  position: absolute;
+  margin: 0 auto;
+  height: 77px;
+  width: 60px;
+  left: 0;
+  right: 0;
+  top: 27%;
+}
+
+iframe {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  top: -10%;
+  left: 0;
+  right: 0;
+}
+
+.profile-container {
+  display: table;
+  margin: -10px auto;
+  text-align: center;
+  background-color: #FF866D;
+}
+
+.profile-header{
+  text-align: center;
+  margin-top: 0;
+  color: white;
+}
+
+.profile {
+  float: left;
+  margin: 0 auto;
+  margin-left: 30px;
+  color: white;
+}
