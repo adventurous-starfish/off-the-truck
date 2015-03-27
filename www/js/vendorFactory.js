@@ -32,6 +32,6 @@ angular.module('offTheTruck.vendorFactory', [])
         }
       });
     }
-  }
+  };
 
 }]);
