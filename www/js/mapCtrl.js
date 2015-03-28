@@ -13,6 +13,11 @@ angular.module('offTheTruck.mapCtrl', [])
   //Gives our views access to the map data
   $scope.map = map;
 
+  //These little windows pop up when a user clicks on the map icon on the map
+  $scope.truckInfo = function(marker, message){
+    Map.populateTruckInfo(marker, message);
+  };
+
   /*This storage object keeps track of the trucks that should be on the map. This is an object
   that sits client side and is updated whenever Firebase is updated.*/
   var markerStorage = {};
@@ -69,7 +74,7 @@ angular.module('offTheTruck.mapCtrl', [])
           icon: markerImg
         });
         //...and then add that marker to our local storage, which has the effect of adding it the map (see below)
-        truckInfo(truckMarker, data.truckname);
+        $scope.truckInfo(truckMarker, data.truckname);
         markerStorage[data.truckname] = truckMarker;
       }
     } else {
@@ -81,8 +86,4 @@ angular.module('offTheTruck.mapCtrl', [])
     }
   });
 
-  //These little windows pop up when a user clicks on the map icon on the map
-  $scope.truckInfo = function(marker, message){
-    Map.populateTruckInfo(marker, message);
-  };
 }]);
