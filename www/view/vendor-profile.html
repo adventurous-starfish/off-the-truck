@@ -20,25 +20,25 @@
         <!-- Name (required) -->
         <label class="item item-input item-icons-wrapper">
           <span class="input-label truck-icon"><i class="fa fa-truck"></i></span>
-          <input ng-readonly="notEditable" type="text" placeholder="{{ vendor.truckName || 'Truck Name' }}">
+          <input ng-readonly="notEditable" type="text" ng-model="vendor.truckName" placeholder="{{ vendor.truckName || 'Truck Name' }}">
         </label>
 
         <!-- Email (required) -->
         <label class="item item-input item-icons-wrapper">
           <span class="input-label mail-icon"><i class="fa fa-envelope"></i></span>
-          <input ng-readonly="notEditable" type="email" placeholder="{{ vendor.email || 'Email' }}">
+          <input ng-readonly="notEditable" type="email" ng-model="vendor.email" placeholder="{{ vendor.email || 'Email' }}">
         </label>
 
         <!-- URL (optional?) -->
         <label class="item item-input item-icons-wrapper">
           <span class="input-label"><i class="fa fa-globe"></i></span>
-          <input ng-readonly="notEditable" type="url" placeholder="{{ vendor.url || 'Website URL'}}">
+          <input ng-readonly="notEditable" type="url" ng-model="vendor.url" placeholder="{{ vendor.url || 'Website URL'}}">
         </label>    
 
         <!-- Description (optional?) -->
         <label class="item item-input item-icons-wrapper description-field">
           <span class="input-label"><i class="fa fa-info-circle"></i></span>
-          <textarea rows="5" textclass="description-text-area" ng-readonly="notEditable" type="text" placeholder="{{ vendor.description || 'Description' }}"></textarea>
+          <textarea rows="5" textclass="description-text-area" ng-readonly="notEditable" type="text" ng-model="vendor.description" placeholder="{{ vendor.description || 'Description' }}"></textarea>
 
         </label>
 
