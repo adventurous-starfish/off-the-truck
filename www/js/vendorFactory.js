@@ -6,33 +6,21 @@ angular.module('offTheTruck.vendorFactory', [])
     getLocation: function(currentTruck){
       console.log('currentTruck', currentTruck);
       navigator.geolocation.getCurrentPosition(function(pos) {
+
+        currentTruck.long = pos.coords.longitude;
+        currentTruck.lat = pos.coords.latitude;
+        
         //This line updates the firebase truck object with the longitute and latitude of the user
-        currentTruck.$save({
-          isServing: true,
-          long: pos.coords.longitude,
-          lat: pos.coords.latitude
+        currentTruck.$save().then(function(){
+          console.log('saved!');
+        }, function(error){
+          console.error(error);
         });
       });
     },
 
-    stopServe: function(currentTruck){
-      console.log('currentTruck', currentTruck);
-      currentTruck.$save({
-        isServing: false
-      });
-    },
-
     updateTruck: function(currentTruck){
-      currentTruck.$save({
-        truckName: currentTruck.truckName,
-        email: currentTruck.email,
-        url: currentTruck.url,
-        description: currentTruck.description
-      }, function(err){
-        if (err){
-          console.error("updateTruck error", err);
-        }
-      });
+      currentTruck.$save();
     }
   };
 

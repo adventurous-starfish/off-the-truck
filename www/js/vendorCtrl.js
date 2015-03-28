@@ -20,7 +20,7 @@ angular.module('offTheTruck.vendorCtrl', [])
   //   $scope.vendor = $firebaseObject($scope.vendorRef);        
   // });
 
-  $scope.vendorRef = new Firebase("https://offthetruck.firebaseio.com/Trucks/simplelogin:57");
+  $scope.vendorRef = new Firebase("https://offthetruck.firebaseio.com/Trucks/simplelogin:67");
   $scope.vendor = $firebaseObject($scope.vendorRef);        
 
   $scope.vendor.$loaded().then(function(){
@@ -63,7 +63,7 @@ angular.module('offTheTruck.vendorCtrl', [])
     if ($scope.vendor.isServing) {
       Vendor.getLocation($scope.vendor);
     } else {
-      Vendor.stopServe($scope.vendor);
+      Vendor.updateTruck($scope.vendor);
     }
     $scope.setStatusText();
   };
