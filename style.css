@@ -9,6 +9,10 @@ a {
   color: inherit;
 }
 
+p {
+  font-size: 13px;
+}
+
 .map-background {
   background-image: url('background.jpg');
   background-size: cover;
@@ -63,7 +67,7 @@ img.team-members {
 }
 
 a.btn.btn-outline-inverse.btn-lg.visit-button:visited {
-  color: white;
+  color: #333;
 }
 
 .github-buttons {
@@ -74,6 +78,10 @@ a.btn.btn-outline-inverse.btn-lg.visit-button:visited {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #67191c;
+}
+
+h3.glint-name {
+  font-size: 22px;
 }
 
 .fa:hover {
