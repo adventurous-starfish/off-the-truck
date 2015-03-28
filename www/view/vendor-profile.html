@@ -1,11 +1,11 @@
 <ion-view>
   <ion-header-bar class="bar-color header-font">
-    <!-- Cancel -->
-    <div ng-if="notEditable" class="vendor-profile-edit" ng-click="toggleEditable()">Cancel</div>
     <!-- Page title -->
     <h3 class="header-font">Profile</h3>
+    <!-- Cancel -->
+    <div ng-if="!notEditable" class="vendor-profile-cancel" ng-click="toggleEditable()">Cancel</div>
     <!-- Done -->
-    <div ng-if="!notEditable" class="vendor-profile-edit" ng-click="saveProfile()">Done</div>
+    <div ng-if="!notEditable" class="vendor-profile-done" ng-click="saveProfile()">Done</div>
     <!-- Edit -->
     <div ng-if="notEditable" class="vendor-profile-edit" ng-click="toggleEditable()">Edit</div>
   </ion-header-bar>

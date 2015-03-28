@@ -13,12 +13,8 @@
         <h2 class="title">Check in times</h2>
       </div>
  -->
-      <div class="vendor-status-text">
-        {{ statusText }}
-      </div>
-
       <!-- Toggle status -->
-      <ion-toggle class="vendor-status-toggle" ng-model="vendor.isServing" ng-change="updateIsServing()">{{ checkinText }}</ion-toggle>
+      <ion-toggle class="vendor-status-toggle" ng-model="vendor.isServing" ng-change="updateIsServing()">{{ statusText }}</ion-toggle>
 
     </div>
 
